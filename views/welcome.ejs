@@ -197,11 +197,11 @@
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Doctors</a>
+        <a class="nav-link" href="/doctors">Doctors</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Chat</a>
+        <a class="nav-link" href="/chat.html">Chat</a>
       </li>
 
       <li class="nav-item">
@@ -209,13 +209,13 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Blogs</a>
+        <a class="nav-link" href="/blog">Blogs</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <a href='#' class="btn btn-outline-primary my-2 my-sm-0">Sign Up</a>
+      <a href='/register' class="btn btn-outline-primary my-2 my-sm-0">Sign Up</a>
       &nbsp;
-      <a href='#' class="btn btn-outline-success my-2 my-sm-0">Login</a>
+      <a href='/login' class="btn btn-outline-success my-2 my-sm-0">Login</a>
     </form>
   </div>
 </nav>
@@ -250,7 +250,7 @@
         <div class="col-12 col-md-6 order-sm-first">
             <h1 class='headings'>Find a Doctor </h1>
 			<h3 class='content'>In this pandemic you dont know when will you get sick or infected by covid, if that happens you can find all of the hospitals near you with the press of a button.</h3> 
-            <br /><button class="btn btn-dark qb-btn">Find Hospitals</button><br />       
+            <br /><button onclick="location.href = 'doctors';" class="btn btn-dark qb-btn">Find Hospitals</button><br />       
         </div>
         <div class="col-12 col-md-6 order-sm-last">
     	    <img class='front-images d-none d-lg-block' src='images/third-bg.jpg'>
@@ -268,7 +268,7 @@
 		<div class="col-12 col-md-6 order-sm-last">
             <h1 class='headings'>Connect with Others</h1>
 			<h3 class='content'>Chat and talk with other people across the world!</h3> 
-            <br /><button class="btn btn-dark qb-btn">Chat</button><br />       
+            <br /><button onclick="location.href = '/chat.html';" class="btn btn-dark qb-btn">Chat</button><br />       
         </div>
     </div>
 </div>
@@ -280,7 +280,7 @@
             <h1 class='headings'>Self Diagnosis</h1>
             <h3 class='content'>Get educational information on your symptoms, diseases associated with your symptoms, provide medical specialties for usually treating patients with the symptoms.      </h3> 
             <br />
-            <br /><button type="button" class="btn btn-dark qb-btn">Diagnose me</button><br />
+            <br /><button type="button" class="btn btn-dark qb-btn" onclick="location.href = '#'">Diagnose me</button><br />
             <br />        </div>
         <div class="col-12 col-md-6 order-sm-last">
     	    <img class='front-images d-none d-lg-block' src='images/fifth-bg.jpg'>
@@ -298,7 +298,7 @@
 		<div class="col-12 col-md-6 order-sm-last">
             <h1 class='headings'>Blogs</h1>
 			<h3 class='content'>Post content and information for people across the world to see!</h3> 
-            <br /><button type="button" class="btn btn-dark qb-btn">Blog</button><br />        
+            <br /><button type="button" class="btn btn-dark qb-btn" onclick="window.location = './blog';">Blog</button><br />        
         </div>
     </div>
 </div>
@@ -312,13 +312,13 @@
                 <br>
                   <li ><a href="/" class="link">Home</a></li>
                   <br>
-                  <li><a href="#" class="link">Doctors</a></li>
+                  <li><a href="/doctors" class="link">Doctors</a></li>
                   <br>
-                  <li><a href="#" class="link">Chat</a></li>
+                  <li><a href="/chat.html" class="link">Chat</a></li>
                   <br>
                   <li><a href="#" class="link">Diagnose</a></li>
                   <br>
-                  <li><a href="#" class="link">Blogs</a></li>
+                  <li><a href="/blog" class="link">Blogs</a></li>
               </ul>
           </div>
           <div class="col-6 offset-1 address">

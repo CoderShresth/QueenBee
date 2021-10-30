@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <title>Chat</title>
+<link rel="icon" href="/images/image.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="https://cdn.socket.io/4.2.0/socket.io.min.js" integrity="sha384-PiBR5S00EtOj2Lto9Uu81cmoyZqR57XcOna1oAuVuIEjzj0wpqDVfD0JA9eXlRsj" crossorigin="anonymous"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+    body{
+      background-image: url("https://preview.redd.it/qwd83nc4xxf41.jpg?width=640&crop=smart&auto=webp&s=e82767fdf47158e80604f407ce4938e44afc6c25");
+      height: 100%;
+    }
+    .row{
+      height: 100vh;
+    }
+    .col-4{
+      padding:40px;
+      background: #FFCC99;
+    background: linear-gradient(to bottom, #FFCC99 0%, #F0BD8A 100%);
+
+    }
+
+    #messages{
+      margin-left: 40px;
+      background-color: rgba(255, 247, 246, 0.822);
+      border-radius: 5px;
+      margin-top: 5px;
+      padding: 10px;
+      width: 700px;
+      word-break: break-all;
+
+    }
+#names{
+    margin-top: 5px;
+    margin-left: 5px;
+    font-weight: 500;
+    font-family: 'PT Sans', sans-serif;}
+
+#msg{
+    margin-left: 5px;
+    font-family: 'Raleway', sans-serif;
+}
+    .dt{
+      text-align: right;
+    }
+    .display-4{
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4">
+        <div class="fixed" style="position: fixed;">
+        <p class="display-4">Send Message</p>
+        <br>
+        <input id = "name" class="form-control" placeholder="Name">
+        <br>
+        <textarea id = "message" class="form-control" placeholder="Your Message Here"></textarea>
+        <br>
+        <button id="send" class="btn btn-dark pl-4 pr-4">Send</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h5 id="dt"></h5>
+        </div>
+      </div>
+      <div class="col-8">
+        <div id="messages-container">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+    var today = new Date();
+  var day = today.getDay();
+  var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+  console.log("Today is : " + daylist[day] + ".");
+  var hour = today.getHours();
+  var minute = today.getMinutes();
+  var second = today.getSeconds();
+  var prepand = (hour >= 12)? " PM ":" AM ";
+  hour = (hour >= 12)? hour - 12: hour;
+  if (hour===0 && prepand===' PM ') 
+  { 
+  if (minute===0 && second===0)
+  { 
+  hour=12;
+  prepand=' Noon';
+  } 
+  else
+  { 
+  hour=12;
+  prepand=' PM';
+  } 
+  } 
+  if (hour===0 && prepand===' AM ') 
+  { 
+  if (minute===0 && second===0)
+  { 
+  hour=12;
+  prepand=' Midnight';
+  } 
+  else
+  { 
+  hour=12;
+  prepand=' AM';
+  } 
+  } 
+document.getElementById("dt").textContent= hour+ ":" + minute+ prepand;
+  document.onload=function(){
+    $(document).scrollTop($(document).height());
+  }
+   var socket = io.connect('http://localhost:3000/');
+    $(() => {
+        $("#send").click(()=>{
+            sendMessage({name: $("#name").val(), message: $("#message").val()});
+            var audio1 = new Audio("./whatsapp_incoming.mp3");
+            audio1.play();
+
+        })
+
+        getMessages()
+        $(document).scrollTop($(document).height());
+    })
+
+    socket.on('message', addMessages)
+
+    function addMessages(message){
+        var dt= document.getElementsByClassName("dt").textContent;
+        $("#messages-container").append(`<div id="messages"><h4 id="names"> ${message.name} </h4> <p id="msg"> ${message.message} </p><br></div><br>`)
+        var audio2 = new Audio("./whatsapp_.mp3");
+         audio2.play();
+    }
+
+    function getMessages(){
+
+      $.get('http://localhost:3000/messages', (data) => {
+        data.forEach(addMessages);
+        $(document).scrollTop($(document).height()); 
+        window.scrollTo(0,document.body.scrollHeight);
+
+      })
+    }
+
+    function sendMessage(message){
+      $.post('http://localhost:3000/messages', message)
+      $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+    }
+    
+</script>
+</body>
+</html>

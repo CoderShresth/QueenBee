@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script type="text/javascript">
+        if (window.location.hash && window.location.hash == '#_=_') {
+            if (window.history && history.pushState) {
+                window.history.pushState("", document.title, window.location.pathname);
+            } else {
+                // Prevent scrolling by storing the page's current scroll offset
+                var scroll = {
+                    top: document.body.scrollTop,
+                    left: document.body.scrollLeft
+                };
+                window.location.hash = '';
+                // Restore the scroll offset, should be flicker free
+                document.body.scrollTop = scroll.top;
+                document.body.scrollLeft = scroll.left;
+            }
+        }
+    </script>
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+<link rel="stylesheet" href="main.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link rel="icon" href="/images/image.ico" type="image/x-icon">
+<title>Blog</title>
+</head>
+<body style='background-image: url("https://www.borastapeter.com/sites/borastapeter.com/files/styles/large/public/product-images/Branches_Image_Tile_Item_7177.jpg?itok=jSvBzTIF");'>
+<style type="text/css">
+.row-header{
+    margin:0px auto;
+    padding:0px;
+}
+.row-content {
+    margin:0px auto;
+    padding: 0px;
+    border-bottom: 1px ridge;
+}
+.carousel {
+    background:#eecebf;
+    color:black;
+
+}
+.carousel-caption{
+    color:black;
+}
+.carousel-item {
+  height: 200px;
+}
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 320px;
+}
+.carousel-indicators{
+    margin-right: 6.9vw;
+}
+#infobtn{
+    margin-bottom: 10px;
+}
+#card2 {
+  box-shadow:  4px 4px 4px rgba(0, 0, 0, 0.2);
+  background-color: #eecebf;
+  margin: 10px;
+  margin-bottom: 10px;
+  padding:15px;
+  font-family: 'Quicksand',
+        sans-serif;
+}
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.column {
+  -ms-flex: 25%; /* IE 10 */
+  flex: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+.textarea{
+    border:1px solid lightgrey;
+}
+.title {
+  color: black;
+  font-size: 1.8rem;
+  padding: 5px;
+  font-family: 'Caveat',
+        cursive;
+}
+@keyframes cardsize{
+    from{}
+    50%{font-size: 16px; box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4);}
+    100%{font-size: 16px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);}
+}
+@keyframes cardpadding{
+    from{}
+    50%{font-size: 16px;padding: 10px;}
+    100%{font-size: 16px;padding: 7px;}
+}
+.blog-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Quicksand',
+        sans-serif;
+}
+.blog-content {
+  font-family: 'Quicksand',
+        sans-serif;
+}
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">QueenBee</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/doctors">Doctors</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="/chat.html">Chat</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="/diagnose.html">Diagnose</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">Blogs</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a href='/logout' class="btn btn-outline-danger my-2 my-sm-0">Logout</a>
+      </form>
+    </div>
+  </nav>
+
+    <div class="container" >
+       <br>
+       <div><h5 class="headings">Trending Today</h5></div><br>
+       <div class="row row-content">
+           <div class="col">
+                <div id="mycarousel" class="carousel slide" data-ride="carousel" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="images/sixth-bg.jpg" alt="News">
+                            <div class="carousel-caption d-none d-md-block offset-md-2 align-text-center">
+                                <h2 class="h2content">International Women's Day</h2>
+                                <p  class="d-none d-sm-block" id="pcontent">International Women's Day is a global day celebrating the social, economic, cultural and political achievements of women. The day also marks a call to action for accelerating gender parity.</p> <br>
+                            </div>
+                        </div>
+
+                        <% Allblogs.forEach(function(headline){ %>
+                            <div class="carousel-item" onerror="this.style.display='none'">
+                                <img onerror="this.style.display='none'" class="d-block img-fluid" src="<%=headline.image%>" alt="News">
+                                <div onerror="this.style.display='none'" class="carousel-caption d-none d-md-block offset-md-2 align-text-center">
+                                    <h2 onerror="this.style.display='none'" id="h2content"><%=headline.title%> </h2>
+                                    <p onerror="this.style.display='none'" class="d-none d-sm-block blog-text" id="pcontent"><%=headline.content%> </p> 
+                                </div>
+                            </div>                            
+                        <% }); %>
+                    </div>
+
+                    <ol class="carousel-indicators">
+                        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mycarousel" data-slide-to="1"></li>
+                        <li data-target="#mycarousel" data-slide-to="2"></li>
+                    </ol>
+                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>                    
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+       <br>
+       <div class="card " >
+            <div class="card-header">
+            <h3>&nbsp;New Post</h3>
+            </div>
+            <div class="card-body">
+                <form class="row" action="/newPost" method="POST">
+                <div class="col-md-9">
+                    <textarea class="col-12 textarea" placeholder="Topic" rows="1" name="title"></textarea>
+                    <textarea class="col-12 textarea" placeholder="Write Something..." rows="4" name="content"></textarea>
+                </div>
+                <div class="col-md-3">
+                    <br>
+                    <label for="inpFile" class="btn col-12"" style="background-color: #eecebf; cursor: pointer;">Upload Image</label>
+					<input type="file" accept="image/*" id="inpFile" style="display: none;">
+					<input name="image" id="hidden-input" style="display: none;" value="">
+                    <button class="btn col-12" id="infobtn" style="background-color: #eecebf;">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+		</div>
+    <br>
+	<br>
+
+    <h1 class="headings">Blogs</h1>
+    <br>
+    <% Allblogs.forEach(function(post){ %>
+    <div class="container">
+        <div class="row" id="card2"> 
+            <div class="col-sm-12 col-md-3 column">
+                <img src="<%=post.image%>" onerror="this.style.display='none'" style="width:100%;">
+            </div> 
+            <div class="col-sm-12 col-md-9 column">
+                <strong class="title " onerror="this.style.display='none'" ><b><%=post.title%></b></strong>
+                <p class="blog-content" onerror="this.style.display='none'" style="text-transform: capitalize;"><%=post.content%></p>   
+            </div>
+        </div>
+    </div>  
+    <% }); %>
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/script.js"></script>
+
+	</body>
+</html>

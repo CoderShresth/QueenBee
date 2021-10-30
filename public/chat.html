@@ -132,7 +132,7 @@ document.getElementById("dt").textContent= hour+ ":" + minute+ prepand;
   document.onload=function(){
     $(document).scrollTop($(document).height());
   }
-   var socket = io.connect('http://localhost:3000/');
+   var socket = io.connect('https://queenbee-web.herokuapp.com/');
     $(() => {
         $("#send").click(()=>{
             sendMessage({name: $("#name").val(), message: $("#message").val()});
@@ -156,16 +156,14 @@ document.getElementById("dt").textContent= hour+ ":" + minute+ prepand;
 
     function getMessages(){
 
-      $.get('http://localhost:3000/messages', (data) => {
+      $.get('https://queenbee-web.herokuapp.com/messages', (data) => {
         data.forEach(addMessages);
         $(document).scrollTop($(document).height()); 
-        window.scrollTo(0,document.body.scrollHeight);
-
       })
     }
 
     function sendMessage(message){
-      $.post('http://localhost:3000/messages', message)
+      $.post('https://queenbee-web.herokuapp.com/messages', message)
       $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
     }
     

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="/images/image.ico" type="image/x-icon">
+    <title>QueenBee</title>
+    <style>
+        *, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+
+.mouse_scroll {
+	display: block;
+	margin: 0 auto;
+	width: 24px;
+	height: 100px;
+	margin-top: 70px;
+}
+
+
+.m_scroll_arrows
+{
+  display: block;
+  width: 5px;
+  height: 5px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+   
+  border-right: 2px solid rgb(116, 89, 0);
+  border-bottom: 2px solid rgb(77, 59, 0);
+  margin: 0 0 3px 4px;
+  
+  width: 16px;
+  height: 16px;
+}
+
+
+.unu
+{
+  margin-top: 1px;
+}
+
+.unu, .doi, .trei
+{
+    -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+    animation: mouse-scroll 1s infinite;
+  
+}
+
+.unu
+{
+  -webkit-animation-delay: .1s;
+  -moz-animation-delay: .1s;
+  -webkit-animation-direction: alternate;
+  
+  animation-direction: alternate;
+  animation-delay: alternate;
+}
+
+.doi
+{
+  -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -webkit-animation-direction: alternate;
+  
+  animation-delay: .2s;
+  animation-direction: alternate;
+  
+  margin-top: -6px;
+}
+
+.trei
+{
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  -webkit-animation-direction: alternate;
+  
+  animation-delay: .3s;
+  animation-direction: alternate;
+  
+  
+  margin-top: -6px;
+}
+
+.mouse {
+  height: 42px;
+  width: 24px;
+  border-radius: 14px;
+  transform: none;
+  border: 2px solid rgb(15, 0, 0);
+  top: 170px;
+}
+
+.wheel {
+  height: 5px;
+  width: 2px;
+  display: block;
+  margin: 5px auto;
+  background: rgb(0, 0, 0);
+  position: relative;
+  
+  height: 4px;
+  width: 4px;
+  border: 2px solid rgb(14, 0, 0);
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
+}
+
+.wheel {
+  -webkit-animation: mouse-wheel 0.6s linear infinite;
+  -moz-animation: mouse-wheel 0.6s linear infinite;
+  animation: mouse-wheel 0.6s linear infinite;
+}
+
+@-webkit-keyframes mouse-wheel{
+   0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+@-moz-keyframes mouse-wheel {
+  0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+@-o-keyframes mouse-wheel {
+
+   0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+@keyframes mouse-wheel {
+
+   0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+
+@-webkit-keyframes mouse-scroll {
+
+  0%   { opacity: 0;}
+  50%  { opacity: .5;}
+  100% { opacity: 1;}
+}
+@-moz-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@-o-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+    </style>
+</head>
+<body >
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">QueenBee</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Doctors</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Chat</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Diagnose</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blogs</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a href='#' class="btn btn-outline-primary my-2 my-sm-0">Sign Up</a>
+      &nbsp;
+      <a href='#' class="btn btn-outline-success my-2 my-sm-0">Login</a>
+    </form>
+  </div>
+</nav>
+
+<div class="container-fluid" style="background-color:#efd8ca">
+	<br>
+    <div class="row row-content align-items-center con4">
+        <div class="col-12 col-md-6 order-sm-first">
+            <h1 class='headings'>QueenBee</h1>
+			<h3 class='content'>A single website for all your healthcare needs!<br/>Created and designed for your every need.</h3> 
+<div class="mouse_scroll">
+
+    <div class="mouse">
+        <div class="wheel"></div>
+    </div>
+    <div>
+        <span class="m_scroll_arrows unu"></span>
+        <span class="m_scroll_arrows doi"></span>
+        <span class="m_scroll_arrows trei"></span>
+    </div>
+</div>
+<br />        </div>
+        <div class="col-12 col-md-6 order-sm-last">
+    	    <img class='front-images d-none d-lg-block' class='img1' src='images/front-bg.jpg'>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="background-color:#ebdfcf">
+	<br>
+    <div class="row row-content align-items-center con4">
+        <div class="col-12 col-md-6 order-sm-first">
+            <h1 class='headings'>Find a Doctor </h1>
+			<h3 class='content'>In this pandemic you dont know when will you get sick or infected by covid, if that happens you can find all of the hospitals near you with the press of a button.</h3> 
+            <br /><button class="btn btn-dark qb-btn">Find Hospitals</button><br />       
+        </div>
+        <div class="col-12 col-md-6 order-sm-last">
+    	    <img class='front-images d-none d-lg-block' src='images/third-bg.jpg'>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="background-color:#ffeded">
+	<br>
+    <div class="row row-content align-items-center con4">
+        <div class="col-12 col-md-6 order-sm-last order-md-first">
+    	    <img class='front-images d-none d-lg-block' src='images/fourth-bg.jpg'>
+			
+        </div>
+		<div class="col-12 col-md-6 order-sm-last">
+            <h1 class='headings'>Connect with Others</h1>
+			<h3 class='content'>Chat and talk with other people across the world!</h3> 
+            <br /><button class="btn btn-dark qb-btn">Chat</button><br />       
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="background-color:#e7d5c0">
+	<br>
+    <div class="row row-content align-items-center con4">
+        <div class="col-12 col-md-6 order-sm-first">
+            <h1 class='headings'>Self Diagnosis</h1>
+            <h3 class='content'>Get educational information on your symptoms, diseases associated with your symptoms, provide medical specialties for usually treating patients with the symptoms.      </h3> 
+            <br />
+            <br /><button type="button" class="btn btn-dark qb-btn">Diagnose me</button><br />
+            <br />        </div>
+        <div class="col-12 col-md-6 order-sm-last">
+    	    <img class='front-images d-none d-lg-block' src='images/fifth-bg.jpg'>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="background-color:#eecebf">
+	<br>
+    <div class="row row-content align-items-center con4">
+        <div class="col-12 col-md-6 order-sm-last order-md-first">
+    	    <img class='front-images d-none d-lg-block' src='./images/sixth-bg.jpg'>
+			
+        </div>
+		<div class="col-12 col-md-6 order-sm-last">
+            <h1 class='headings'>Blogs</h1>
+			<h3 class='content'>Post content and information for people across the world to see!</h3> 
+            <br /><button type="button" class="btn btn-dark qb-btn">Blog</button><br />        
+        </div>
+    </div>
+</div>
+
+<footer class="footer" id="contacts">
+  <div class="container">
+      <div class="row">             
+          <div class="col-3 offset-sm-1">
+              <ul class="list-unstyled justify-content-center">
+                <br>
+                <br>
+                  <li ><a href="/" class="link">Home</a></li>
+                  <br>
+                  <li><a href="#" class="link">Doctors</a></li>
+                  <br>
+                  <li><a href="#" class="link">Chat</a></li>
+                  <br>
+                  <li><a href="#" class="link">Diagnose</a></li>
+                  <br>
+                  <li><a href="#" class="link">Blogs</a></li>
+              </ul>
+          </div>
+          <div class="col-6 offset-1 address">
+            <br>
+              <h5>Credits</h5>
+              <address>
+            QueenBee<br>
+            By Shresth Gupta<br>
+            Studying in class 9th<br>
+            Mobile: +91 9958270226<br>
+            Email: <a href="mailto:gis.5686@gaursinternationalschool.com">gis.5686@gaursinternationalschool.com</a>
+         </address>
+          </div>
+     </div>
+     <div  class="row justify-content-center">             
+          <div class="col-auto">
+              <p>🐝 QueenBee - HackNITR 3.0</p>
+          </div>
+     </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

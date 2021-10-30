@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+.body{
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.headings {
+    font-family: 'Caveat',
+        cursive;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.content {
+    font-family: 'Quicksand',
+        sans-serif;
+    font-size: 1.5rem;
+    padding-left: 30px;
+    text-align: center;
+
+}
+
+.login-content{
+    font-family: 'Quicksand',
+        sans-serif;
+    font-size: 1.3rem;
+}
+
+.qb-btn {
+    margin: 0 auto;
+    display: block;
+}
+
+.front-images {
+    float: right;
+    width: 46vw;
+    height: 92.4vh;
+}
